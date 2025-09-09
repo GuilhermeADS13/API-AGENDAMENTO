@@ -12,3 +12,12 @@ Para essa API, utilizamos as seguintes ferramentas:
 - [Trello](https://trello.com/b/uuHnsnfA/api-agendamento): Usado para gestão e organização do projeto;
 - FIGMA: Usado para prototipação **_(adicionar hyperlink do figma nessa linha depois)_**;
 - Linguagens de Programação que vamos usar _**(modificar essa linha depois)**_.
+
+# 🔴FUNCIONALIDADES
+Esta APl é o coração de um sistema de agendamento para gerenciar recursos compartilhados (como salas, equipamentos, auditórios) em uma organização.
+Ela permite:
+1. Cadastrar Recursos: Adicionar novos itens (ex: "Projetor 4K", "Sala 101") ao sistema;
+2. Consultar Disponibilidade: Verificar quais recursos estão livres em uma data e horário específicos;
+3. Fazer Reservas: Garantir o uso exclusivo de um recurso por um período determinado;
+4. Gerenciar Reservas: Cancelar, editar ou visualizar agendamentos existentes;
+5. Prevenir Conflitos: Impedir que dois usuários reservem o mesmo recurso no mesmo horário.
