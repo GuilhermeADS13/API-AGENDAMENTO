@@ -7,13 +7,13 @@ Além disso, previne conflitos ao garantir que nenhum recurso seja reservado sim
 <img src="https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/fe046d572b0f27b69a0d2ab6573d01eca77fb54f/TIMESLOT.png" alt= "logo do projeto" width="400">
 </p>
 
-# 💻FERRAMENTAS UTILIZADAS
+# 💻Ferramentas Utilizadas
 Para essa API, utilizamos as seguintes ferramentas:
 - [Trello](https://trello.com/b/uuHnsnfA/api-agendamento): Usado para gestão e organização do projeto;
 - FIGMA: Usado para prototipação **_(adicionar hyperlink do figma nessa linha depois)_**;
 - Linguagens de Programação que vamos usar _**(modificar essa linha depois)**_.
 
-# 🔴FUNCIONALIDADES
+# 📚Funcionalidades
 Esta APl é o coração de um sistema de agendamento para gerenciar recursos compartilhados (como salas, equipamentos, auditórios) em uma organização.
 Ela permite:
 1. Cadastrar Recursos: Adicionar novos itens (ex: "Projetor 4K", "Sala 101") ao sistema;
