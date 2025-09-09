@@ -11,4 +11,4 @@ Além disso, previne conflitos ao garantir que nenhum recurso seja reservado sim
 Para essa API, utilizamos as seguintes ferramentas:
 - [Trello](https://trello.com/b/uuHnsnfA/api-agendamento): Usado para gestão e organização do projeto;
 - FIGMA: Usado para prototipação **_(adicionar hyperlink do figma nessa linha depois)_**;
-- _Linguagens de Programação que vamos usar**(modificar essa linha depois)_**.
+- Linguagens de Programação que vamos usar _**(modificar essa linha depois)**_.
