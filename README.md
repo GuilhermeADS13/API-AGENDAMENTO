@@ -24,3 +24,6 @@ Ela permite:
 5. Prevenir Conflitos: Impedir que dois usuários reservem o mesmo recurso no mesmo horário.
 
 # 🔹Tela de Login
+<p align="center">
+<img src="https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/b23e2106898e31deca4981dec79595b99877c259/TELADELOGIN.png" alt= "tela de login" width="400">
+</p>
