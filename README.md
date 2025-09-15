@@ -10,8 +10,9 @@ Além disso, previne conflitos ao garantir que nenhum recurso seja reservado sim
 # 💻Ferramentas Utilizadas
 Para essa API, utilizamos as seguintes ferramentas:
 - [Trello](https://trello.com/b/uuHnsnfA/api-agendamento): Usado para gestão e organização do projeto;
-- FIGMA: Usado para prototipação **_(adicionar hyperlink do figma nessa linha depois)_**;
-- Linguagens de Programação que vamos usar _**(modificar essa linha depois)**_.
+- [FIGMA](https://www.figma.com/design/nXpn7ePgYY5vHbfiZZ7SP5/TIMESLOT?node-id=0-1&p=f&t=MfXhmX5JMhzXBihN-0): Usado para prototipação;
+- HTML, CSS: Usadas no Front-End
+- Java: Usado no Back-End.
 
 # 📚Funcionalidades
 Esta APl é o coração de um sistema de agendamento para gerenciar recursos compartilhados (como salas, equipamentos, auditórios) em uma organização.
