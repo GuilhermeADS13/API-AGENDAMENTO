@@ -25,5 +25,5 @@ Ela permite:
 
 # 🔹Tela de Login
 <p align="center">
-<img src="https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/b23e2106898e31deca4981dec79595b99877c259/TELADELOGIN.png" alt= "tela de login" width="400">
+<img src="https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/b23e2106898e31deca4981dec79595b99877c259/TELADELOGIN.png" alt= "tela de login" width="800">
 </p>
