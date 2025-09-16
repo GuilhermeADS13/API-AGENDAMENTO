@@ -1,5 +1,5 @@
 # 📆⏱️TIMESLOT
-O TimeSloT é uma API desenvolvida para facilitar o gerenciamento de recursos compartilhados dentro de uma organização.
+O TimeSlot é uma API desenvolvida para facilitar o gerenciamento de recursos compartilhados dentro de uma organização.
 Ela funciona como o núcleo de um sistema de agendamento, permitindo cadastrar recursos, consultar disponibilidade em tempo real, realizar reservas seguras e gerenciar agendamentos já existentes.
 Além disso, previne conflitos ao garantir que nenhum recurso seja reservado simultaneamente por mais de um usuário. 
 
