@@ -27,3 +27,8 @@ Ela permite:
 <p align="center">
 <img src="https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/b23e2106898e31deca4981dec79595b99877c259/TELADELOGIN.png" alt= "tela de login" width="800">
 </p>
+
+# 🔹Issue Tracker
+<p align="center">
+<img width="1358" height="349" alt="image" src="https://github.com/user-attachments/assets/92ad1253-8283-4082-81fe-2d60de4e3a0f" />
+</p>
