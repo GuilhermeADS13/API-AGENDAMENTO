@@ -32,3 +32,8 @@ Ela permite:
 <p align="center">
 <img width="1358" height="349" alt="image" src="https://github.com/user-attachments/assets/92ad1253-8283-4082-81fe-2d60de4e3a0f" />
 </p>
+
+# 🔹Quadro de Entregas
+<p align="center">
+<img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/fab14797-dd0a-495d-b041-121c995249f4" />
+</p>
