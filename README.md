@@ -1,4 +1,4 @@
-# 📆⏱️TIMESLOT
+e# 📆⏱️TIMESLOT
 O TimeSlot é uma API desenvolvida para facilitar o gerenciamento de recursos compartilhados dentro de uma organização.
 Ela funciona como o núcleo de um sistema de agendamento, permitindo cadastrar recursos, consultar disponibilidade em tempo real, realizar reservas seguras e gerenciar agendamentos já existentes.
 Além disso, previne conflitos ao garantir que nenhum recurso seja reservado simultaneamente por mais de um usuário. 
@@ -41,3 +41,9 @@ Ela permite:
 # 🔹Screencast do projeto
 https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c
 
+# 🔹Diagramas
+**Usuário (Aluno/Professor)**
+![Diagrama Usuário](https://github.com/user-attachments/assets/b7e5876b-6d15-4bc9-8d7c-c5653b9da98d)
+
+**Funcionário**
+![Diagrama Funcionário](https://github.com/user-attachments/assets/633a1dc2-fa0b-42bf-a240-63aaf6100aa7)
