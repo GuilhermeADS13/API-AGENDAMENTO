@@ -37,3 +37,7 @@ Ela permite:
 <p align="center">
 <img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/fab14797-dd0a-495d-b041-121c995249f4" />
 </p>
+
+# 🔹Screencast do projeto
+https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c
+
