@@ -30,12 +30,12 @@ Ela permite:
 
 # 🔹Issue Tracker
 <p align="center">
-<img width="1358" height="349" alt="image" src="https://github.com/user-attachments/assets/92ad1253-8283-4082-81fe-2d60de4e3a0f" />
+<img width="1600" height="559" alt="image" src="https://github.com/user-attachments/assets/4d57001f-0fbd-4d90-b90c-6edcb08f10c5" />
 </p>
 
 # 🔹Quadro de Entregas
 <p align="center">
-<img width="1919" height="826" alt="image" src="https://github.com/user-attachments/assets/fab14797-dd0a-495d-b041-121c995249f4" />
+<img width="1918" height="808" alt="image" src="https://github.com/user-attachments/assets/66c00dc0-4cb3-4c95-9a30-4de2cfc23165" />
 </p>
 
 # 🔹Screencast do projeto
