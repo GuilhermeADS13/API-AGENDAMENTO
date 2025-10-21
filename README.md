@@ -47,3 +47,18 @@ https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c
 
 **Funcionário**
 ![Diagrama Funcionário](https://github.com/user-attachments/assets/633a1dc2-fa0b-42bf-a240-63aaf6100aa7)
+
+# 🔹Programação em Par
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a3c7f1fb-aeb1-42d1-a5dc-0f45dca2f97e" 
+       alt="image" 
+       width="49%" 
+       style="display:inline-block; margin-right:5px;" />
+  <img src="https://github.com/user-attachments/assets/c6177112-c057-4867-a8a9-076236eba9fd" 
+       alt="image" 
+       width="49%" 
+       style="display:inline-block;" />
+</div>
+
+# 🔹Teste de Inserção
+https://github.com/user-attachments/assets/247e7054-cf1b-441b-8204-ae96964aa52b
