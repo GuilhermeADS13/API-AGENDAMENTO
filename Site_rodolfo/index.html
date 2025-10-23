@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMESLOT - Sistema de Gestão</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div id="loginPage" class="page active">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>TIME<span>SLOT</span></h1>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="username">NOME DE USUÁRIO</label>
+                            <input type="text" id="username" name="username" required>
+                            <div class="error-message" id="usernameError"></div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="password">SENHA</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+                        
+                        <div class="separator"></div>
+                        
+                        <button type="submit" class="btn-primary">LOGIN</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('forgotPage')">Esqueceu a senha?</a>
+                            <a class="link" onclick="showPage('registerPage')">Não tem uma conta? Cadastre-se aqui!</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM LOGIN.png" alt="Imagem de fundo login" id="loginImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="registerPage" class="page">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>CADASTRA-SE AQUI!</h1>
+                        <p class="subtitle">Não se preocupe, não vamos contar para ninguém</p>
+                    </div>
+                    
+                    <form id="registerForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="fullname">NOME COMPLETO</label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Nome completo" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="regUsername">NOME DE USUÁRIO</label>
+                                <input type="text" id="regUsername" name="regUsername" placeholder="Nome de usuário" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="phone">TELEFONE</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="birthdate">DATA NASC.</label>
+                                <input type="date" id="birthdate" name="birthdate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="regPassword">SENHA</label>
+                            <input type="password" id="regPassword" name="regPassword" placeholder="Mínimo 6 caracteres" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Cadastrar-se</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('loginPage')">Já tem uma conta? Clique aqui!</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM CADASTRO.png" alt="Imagem de fundo cadastro" id="registerImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="homePage" class="page">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#006FFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                TIMESLOT
+            </div>
+            <div class="navbar-menu">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre nós</a>
+                <div class="user-info">
+                    <span id="userName">ID</span>
+                    <div class="user-avatar" id="userAvatar">U</div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="home-content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Gerencie Recursos de Forma Simples e Eficiente</h1>
+                    <p>O TimeStat é uma API desenvolvida para facilitar o gerenciamento de recursos comercialmente dentro de uma organização. Além disso, preciso analisar sua personalidade e recursos seja reservada simultaneamente por mais de um usuário.</p>
+                    <button class="btn-hero" onclick="alert('Função em desenvolvimento!')">Saiba mais sobre nossos serviços</button>
+                </div>
+                <div class="hero-image">
+                    <img src="imagens/IMAGEM HOME.png" alt="Imagem principal" id="homeMainImage">
+                </div>
+            </div>
+
+            <div class="features-section" id="services">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <h3>Gestão Completa de Recursos</h3>
+                    <p>Controle complexo durante apresentação de recursos dedicados para assembleias e reuniões importantes</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Hospitalidade em Todos os Casos</h3>
+                    <p>Mudança de fatores lateralmente intelectual para melhor atendimento ao usuário</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Recursos com Equilíbrio</h3>
+                    <p>Apontamento de fonte rápido e focal para melhor distribuição de recursos</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3>Relatórios de Uso</h3>
+                    <p>Mudança de seus recursos com focalidade e análises detalhadas</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Central de Atendimento</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        <span>+55 (81) 3043-2422</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Nossas redes:</span>
+                        <div class="social-icons">
+                            <span>LinkedIn</span>
+                            <span>Facebook</span>
+                            <span>Instagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="forgotPage" class="page">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>RECUPERAR SENHA</h1>
+                    </div>
+                    
+                    <form id="forgotForm">
+                        <div class="input-group">
+                            <label for="forgotEmail">E-MAIL</label>
+                            <input type="email" id="forgotEmail" name="forgotEmail" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Enviar link de recuperação</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('loginPage')">Voltar para login</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM RECUPERAÇAO.png" alt="Recuperação de Senha">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
