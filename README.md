@@ -49,6 +49,22 @@ https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c
 ![Diagrama Funcionário](https://github.com/user-attachments/assets/633a1dc2-fa0b-42bf-a240-63aaf6100aa7)
 
 # 🔹Programação em Par
+<details>
+  <summary>Relatório</summary>
+  <p>
+    
+O projeto teve início com a prática de programação em dupla, utilizando o Discord como principal meio de comunicação e colaboração entre os integrantes. Durante as sessões, um membro atuava como driver, responsável pela escrita do código, enquanto o outro exercia o papel de navigator, acompanhando e sugerindo melhorias.
+
+O Discord foi utilizado para chamadas de voz e compartilhamento de tela, permitindo que ambos acompanhassem o desenvolvimento em tempo real. Além disso, o GitHub foi usado para o versionamento e armazenamento do código do projeto.
+
+As atividades iniciais envolveram a definição da ideia principal, a escolha das ferramentas e tecnologias, a configuração do ambiente de desenvolvimento e as primeiras etapas de codificação conjunta.
+
+Alguns dos benefícios observados estão a melhoria na comunicação, o aprendizado colaborativo e a redução de erros durante a programação.
+
+O uso do Discord mostrou-se eficiente para o trabalho em dupla, contribuindo para a organização, o aprendizado e o bom andamento do projeto.      
+  </p>
+</details>
+
 <div align="center">
   <img src="https://github.com/user-attachments/assets/a3c7f1fb-aeb1-42d1-a5dc-0f45dca2f97e" 
        alt="image" 
