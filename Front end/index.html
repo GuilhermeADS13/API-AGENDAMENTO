@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMESLOT - Sistema de Gestão</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <!-- PÁGINA DE LOGIN -->
+    <div id="loginPage" class="page active">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>TIME<span>SLOT</span></h1>
+                    </div>
+                    
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="username">NOME DE USUÁRIO</label>
+                            <input type="text" id="username" name="username" required>
+                            <div class="error-message" id="usernameError"></div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="password">SENHA</label>
+                            <input type="password" id="password" name="password" required>
+                            <div class="error-message" id="passwordError"></div>
+                        </div>
+                        
+                        <div class="separator"></div>
+                        
+                        <button type="submit" class="btn-primary">LOGIN</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('forgotPage')">Esqueceu a senha?</a>
+                            <a class="link" onclick="showPage('registerPage')">Não tem uma conta? Cadastre-se aqui!</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM LOGIN.png" alt="Imagem de fundo login" id="loginImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE CADASTRO -->
+    <div id="registerPage" class="page">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>CADASTRA-SE AQUI!</h1>
+                        <p class="subtitle">Não se preocupe, não vamos contar para ninguém</p>
+                    </div>
+                    
+                    <form id="registerForm">
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="fullname">NOME COMPLETO</label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Nome completo" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="regUsername">NOME DE USUÁRIO</label>
+                                <input type="text" id="regUsername" name="regUsername" placeholder="Nome de usuário" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="email">E-MAIL</label>
+                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="input-group">
+                                <label for="phone">TELEFONE</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="birthdate">DATA NASC.</label>
+                                <input type="date" id="birthdate" name="birthdate" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label for="regPassword">SENHA</label>
+                            <input type="password" id="regPassword" name="regPassword" placeholder="Mínimo 6 caracteres" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Cadastrar-se</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('loginPage')">Já tem uma conta? Clique aqui!</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM CADASTRO.png" alt="Imagem de fundo cadastro" id="registerImage">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA HOME -->
+    <div id="homePage" class="page">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#006FFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                TIMESLOT
+            </div>
+            <div class="navbar-menu">
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre nós</a>
+                <a onclick="showPage('reservationsPage')">Minhas Reservas</a>
+                <a onclick="showPage('resourcesPage')">Recursos</a>
+                <div class="user-info">
+                    <span id="userName">ID</span>
+                    <div class="user-avatar" id="userAvatar">U</div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="home-content">
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>Gerencie Recursos de Forma Simples e Eficiente</h1>
+                    <p>O TIMESLOT é uma solução completa desenvolvida para facilitar o gerenciamento de recursos dentro de uma organização. Controle salas, equipamentos e reservas de forma intuitiva e eficiente.</p>
+                    <button class="btn-hero" onclick="showPage('reservationsPage')">Começar a Usar</button>
+                </div>
+                <div class="hero-image">
+                    <img src="imagens/IMAGEM HOME.png" alt="Imagem principal" id="homeMainImage">
+                </div>
+            </div>
+
+            <div class="features-section" id="services">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <h3>Gestão Completa de Recursos</h3>
+                    <p>Controle salas, laboratórios, auditórios e equipamentos de forma centralizada e organizada</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Reservas Inteligentes</h3>
+                    <p>Sistema de reservas com verificação de conflitos e confirmação automática</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
+                        </svg>
+                    </div>
+                    <h3>Gestão de Usuários</h3>
+                    <p>Controle de acesso e permissões para diferentes tipos de usuários</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                        </svg>
+                    </div>
+                    <h3>Relatórios Detalhados</h3>
+                    <p>Relatórios de uso, ocupação e estatísticas para tomada de decisão</p>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Central de Atendimento</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                        </svg>
+                        <span>+55 (81) 3043-2422</span>
+                    </div>
+                    <div class="contact-item">
+                        <span>Nossas redes:</span>
+                        <div class="social-icons">
+                            <span>LinkedIn</span>
+                            <span>Facebook</span>
+                            <span>Instagram</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE RESERVAS -->
+    <div id="reservationsPage" class="page">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#006FFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                TIMESLOT
+            </div>
+            <div class="navbar-menu">
+                <a onclick="showPage('homePage')">Home</a>
+                <a href="#services">Serviços</a>
+                <a href="#about">Sobre nós</a>
+                <a onclick="showPage('resourcesPage')">Recursos</a>
+                <div class="user-info">
+                    <span id="userNameReservations">ID</span>
+                    <div class="user-avatar" id="userAvatarReservations">U</div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="reservations-content">
+            <div class="reservations-header">
+                <h1>Minhas Reservas</h1>
+                <p>Acompanhe e gerencie todas as suas reservas de recursos</p>
+            </div>
+
+            <div class="reservations-container">
+                <!-- BASE - LADO ESQUERDO -->
+                <div class="reservations-base">
+                    <h2>Base</h2>
+                    <div class="base-info">
+                        <div class="info-item">
+                            <strong>Suas Reservas</strong>
+                            <span>Informações gerais das reservas</span>
+                        </div>
+                        <div class="info-grid">
+                            <div class="info-column">
+                                <h4>Informações</h4>
+                                <div class="info-detail">Horários</div>
+                                <div class="info-detail">Reservado Para</div>
+                                <div class="info-detail">Reservado Em</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LISTA DE RESERVAS - LADO DIREITO -->
+                <div class="reservations-main">
+                    <button class="new-reservation-btn" onclick="openNewReservationModal()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                        Nova Reserva
+                    </button>
+                    
+                    <!-- Filtros e Busca -->
+                    <div class="reservations-filters">
+                        <div class="search-box">
+                            <input type="text" id="searchReservationsInput" placeholder="Buscar por sala ou local...">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#6c757d">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </div>
+                        <div class="filter-options">
+                            <select id="reservationStatusFilter">
+                                <option value="all">Todos os status</option>
+                                <option value="active">Ativas</option>
+                                <option value="pending">Pendentes</option>
+                                <option value="completed">Concluídas</option>
+                                <option value="cancelled">Canceladas</option>
+                            </select>
+                            <select id="reservationDateFilter">
+                                <option value="all">Todas as datas</option>
+                                <option value="today">Hoje</option>
+                                <option value="week">Esta semana</option>
+                                <option value="month">Este mês</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="reservations-list" id="reservationsList">
+                        <!-- As reservas serão carregadas dinamicamente pelo JavaScript -->
+                    </div>
+
+                    <!-- ESTATÍSTICAS -->
+                    <div class="reservations-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-info">
+                                <h4>Total de Reservas</h4>
+                                <span class="stat-number" id="totalReservations">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-info">
+                                <h4>Ativas</h4>
+                                <span class="stat-number" id="activeReservations">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">⏳</div>
+                            <div class="stat-info">
+                                <h4>Pendentes</h4>
+                                <span class="stat-number" id="pendingReservations">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📅</div>
+                            <div class="stat-info">
+                                <h4>Este Mês</h4>
+                                <span class="stat-number" id="monthReservations">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HISTÓRICO DE RESERVAS -->
+                    <div class="reservations-history">
+                        <div class="history-header">
+                            <h2>Histórico</h2>
+                        </div>
+                        
+                        <div class="history-table-container">
+                            <table class="history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Recurso</th>
+                                        <th>Horário</th>
+                                        <th>Reservado Para</th>
+                                        <th>Reservado Em</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTableBody">
+                                    <!-- Histórico será carregado dinamicamente -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="history-stats">
+                            <div class="history-stat">
+                                <span class="stat-label">Total no Histórico</span>
+                                <span class="stat-value" id="totalHistory">0</span>
+                            </div>
+                            <div class="history-stat">
+                                <span class="stat-label">Concluídas</span>
+                                <span class="stat-value" id="completedHistory">0</span>
+                            </div>
+                            <div class="history-stat">
+                                <span class="stat-label">Canceladas</span>
+                                <span class="stat-value" id="cancelledHistory">0</span>
+                            </div>
+                            <div class="history-stat">
+                                <span class="stat-label">Taxa de Comparecimento</span>
+                                <span class="stat-value" id="attendanceRate">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE RECURSOS -->
+    <div id="resourcesPage" class="page">
+        <nav class="navbar">
+            <div class="navbar-logo">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#006FFF">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                </svg>
+                TIMESLOT
+            </div>
+            <div class="navbar-menu">
+                <a onclick="showPage('homePage')">Home</a>
+                <a onclick="showPage('reservationsPage')">Minhas Reservas</a>
+                <a onclick="showPage('resourcesPage')" class="active">Recursos</a>
+                <a href="#services">Serviços</a>
+                <div class="user-info">
+                    <span id="userNameResources">ID</span>
+                    <div class="user-avatar" id="userAvatarResources">U</div>
+                </div>
+            </div>
+            <div class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+
+        <div class="resources-content">
+            <div class="resources-header">
+                <h1>Gerenciar Recursos</h1>
+                <p>Adicione e gerencie salas e equipamentos da universidade</p>
+            </div>
+
+            <div class="resources-container">
+                <!-- SIDEBAR DE RECURSOS -->
+                <div class="resources-sidebar">
+                    <h2>Recursos</h2>
+                    
+                    <div class="resource-category">
+                        <div class="category-header">
+                            <h3>Adicionar</h3>
+                            <button class="add-resource-btn" onclick="openResourceModal()">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                                </svg>
+                                Novo +
+                            </button>
+                        </div>
+                        <p style="color: var(--gray); font-size: 0.875rem; margin-bottom: 1rem;">
+                            Adicionar novos recursos ao sistema
+                        </p>
+                    </div>
+
+                    <div class="status-info">
+                        <h4>Status</h4>
+                        <div class="status-item">
+                            <span>Informações</span>
+                            <span>Condições</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LISTA DE RECURSOS -->
+                <div class="resources-main">
+                    <!-- Filtros e Busca -->
+                    <div class="resources-filters">
+                        <div class="search-box">
+                            <input type="text" id="searchResourcesInput" placeholder="Buscar por sala ou equipamento...">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="#6c757d">
+                                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                            </svg>
+                        </div>
+                        <div class="filter-options">
+                            <select id="resourceStatusFilter">
+                                <option value="all">Todos os status</option>
+                                <option value="active">Ativos</option>
+                                <option value="maintenance">Em manutenção</option>
+                                <option value="inactive">Inativos</option>
+                            </select>
+                            <select id="resourceTypeFilter">
+                                <option value="all">Todos os tipos</option>
+                                <option value="sala">Salas</option>
+                                <option value="laboratorio">Laboratórios</option>
+                                <option value="equipamento">Equipamentos</option>
+                                <option value="auditorio">Auditórios</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <!-- Grid de Recursos -->
+                    <div class="resources-grid" id="resourcesGrid">
+                        <!-- Recursos serão carregados dinamicamente -->
+                    </div>
+
+                    <!-- Estatísticas -->
+                    <div class="resources-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">🏢</div>
+                            <div class="stat-info">
+                                <h4>Total de Recursos</h4>
+                                <span class="stat-number" id="totalResources">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">✅</div>
+                            <div class="stat-info">
+                                <h4>Disponíveis</h4>
+                                <span class="stat-number" id="availableResources">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">🔧</div>
+                            <div class="stat-info">
+                                <h4>Em Manutenção</h4>
+                                <span class="stat-number" id="maintenanceResources">0</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📊</div>
+                            <div class="stat-info">
+                                <h4>Taxa de Uso</h4>
+                                <span class="stat-number" id="usageRate">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PARA NOVA RESERVA -->
+    <div id="newReservationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Nova Reserva</h2>
+                <button class="close-modal" onclick="closeNewReservationModal()">&times;</button>
+            </div>
+            <form id="newReservationForm">
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="roomSelect">SALA/RECURSO</label>
+                        <select id="roomSelect" required>
+                            <option value="">Selecione uma sala...</option>
+                            <option value="Sala 482 - Bloco A">Sala 482 - Bloco A</option>
+                            <option value="Sala 680 - Bloco C">Sala 680 - Bloco C</option>
+                            <option value="Auditório Principal">Auditório Principal</option>
+                            <option value="Laboratório 205 - Bloco B">Laboratório 205 - Bloco B</option>
+                            <option value="Sala de Reuniões 101">Sala de Reuniões 101</option>
+                            <option value="Laboratório de Informática">Laboratório de Informática</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="reservationDate">DATA</label>
+                        <input type="date" id="reservationDate" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="startTime">HORÁRIO INICIAL</label>
+                        <input type="time" id="startTime" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="endTime">HORÁRIO FINAL</label>
+                        <input type="time" id="endTime" required>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label for="reservationPurpose">FINALIDADE</label>
+                    <textarea id="reservationPurpose" placeholder="Descreva o propósito desta reserva..." rows="3"></textarea>
+                </div>
+                <div class="input-group">
+                    <label for="participants">NÚMERO DE PARTICIPANTES</label>
+                    <input type="number" id="participants" min="1" max="100" value="1">
+                </div>
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeNewReservationModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Confirmar Reserva</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALHES DA RESERVA -->
+    <div id="reservationDetailsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Detalhes da Reserva</h2>
+                <button class="close-modal" onclick="closeReservationDetailsModal()">&times;</button>
+            </div>
+            <div class="reservation-details-content" id="reservationDetailsContent">
+                <!-- Conteúdo será preenchido dinamicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PARA ADICIONAR/EDITAR RECURSO -->
+    <div id="resourceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="resourceModalTitle">Novo Recurso</h2>
+                <button class="close-modal" onclick="closeResourceModal()">&times;</button>
+            </div>
+            <form id="resourceForm">
+                <input type="hidden" id="resourceId">
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="resourceName">NOME DO RECURSO</label>
+                        <input type="text" id="resourceName" placeholder="Ex: Sala 402 - Bloco A" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="resourceType">TIPO</label>
+                        <select id="resourceType" required>
+                            <option value="">Selecione o tipo...</option>
+                            <option value="sala">Sala de Aula</option>
+                            <option value="laboratorio">Laboratório</option>
+                            <option value="auditorio">Auditório</option>
+                            <option value="equipamento">Equipamento</option>
+                            <option value="sala_reuniao">Sala de Reunião</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="resourceLocation">LOCALIZAÇÃO</label>
+                        <input type="text" id="resourceLocation" placeholder="Ex: Bloco A, 4º andar" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="resourceCapacity">CAPACIDADE</label>
+                        <input type="number" id="resourceCapacity" min="1" max="500" placeholder="Número de pessoas">
+                    </div>
+                </div>
+                
+                <div class="resource-form-section">
+                    <h3>Equipamentos Disponíveis</h3>
+                    <div class="equipment-list">
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="projetor">
+                            <span>Projetor Multimídia</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="ar_condicionado">
+                            <span>Ar Condicionado</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="internet">
+                            <span>Acesso à Internet</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="computadores">
+                            <span>Computadores</span>
+                        </label>
+                        <label class="equipment-item">
+                            <input type="checkbox" name="equipment" value="quadro_branco">
+                            <span>Quadro Branco</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group">
+                        <label for="resourceStatus">STATUS</label>
+                        <select id="resourceStatus" required>
+                            <option value="active">Ativo</option>
+                            <option value="maintenance">Em Manutenção</option>
+                            <option value="inactive">Inativo</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="resourceCode">CÓDIGO</label>
+                        <input type="text" id="resourceCode" placeholder="Código único do recurso" required>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="resourceDescription">DESCRIÇÃO</label>
+                    <textarea id="resourceDescription" placeholder="Descreva as características do recurso..." rows="3"></textarea>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" onclick="closeResourceModal()">Cancelar</button>
+                    <button type="submit" class="btn-primary">Salvar Recurso</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- PÁGINA DE RECUPERAÇÃO DE SENHA -->
+    <div id="forgotPage" class="page">
+        <div class="container">
+            <div class="form-side">
+                <div class="form-container">
+                    <div class="logo">
+                        <h1>RECUPERAR SENHA</h1>
+                    </div>
+                    
+                    <form id="forgotForm">
+                        <div class="input-group">
+                            <label for="forgotEmail">E-MAIL</label>
+                            <input type="email" id="forgotEmail" name="forgotEmail" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary">Enviar link de recuperação</button>
+                        
+                        <div class="links">
+                            <a class="link" onclick="showPage('loginPage')">Voltar para login</a>
+                        </div>
+                    </form>
+                    
+                    <div class="footer">
+                        <p>&copy;2025 Timeslot</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="image-side">
+                <div class="image-container">
+                    <img src="imagens/IMAGEM RECUPERAÇAO.png" alt="Recuperação de Senha">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
