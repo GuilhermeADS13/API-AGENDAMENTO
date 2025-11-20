@@ -10,18 +10,13 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @Table(name = "tb_resource")
-public class Resource {
+public class Resource extends Reservation{
     
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @EqualsAndHashCode.Include
-    private Integer id;
-
     private int quantity;
     private String description;
     private String status;
