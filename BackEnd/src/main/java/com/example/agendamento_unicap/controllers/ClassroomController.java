@@ -1,5 +1,6 @@
 package com.example.agendamento_unicap.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,13 +31,13 @@ public class ClassroomController {
     }
 
     @PostMapping
-    public ResponseEntity<ClassroomDTO> save(@RequestBody ClassroomDTO classroom) {
+    public ResponseEntity<ClassroomDTO> save(@Valid @RequestBody ClassroomDTO classroom) {
         classroom = classroomService.save(classroom);
         return ResponseEntity.ok(classroom);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ClassroomDTO> update(@PathVariable Integer id, @RequestBody ClassroomDTO dto) {
+    public ResponseEntity<ClassroomDTO> update(@PathVariable Integer id, @Valid @RequestBody ClassroomDTO dto) {
         ClassroomDTO updated = classroomService.update(id, dto);
         return ResponseEntity.ok(updated);
     }

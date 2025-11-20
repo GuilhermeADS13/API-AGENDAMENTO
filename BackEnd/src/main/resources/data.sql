@@ -11,7 +11,7 @@ INSERT INTO tb_user (name, email) VALUES ('Rafael', 'rafael.pereira@gmail.com');
 INSERT INTO tb_user (name, email) VALUES ('Beatriz', 'beatriz.costa@gmail.com');
 
 -- inserindo recursos
-INSERT INTO tb_resource (quantity, description, status) VALUES (5 , 'teste', 'e um teste');
+INSERT INTO tb_resource (quantity, description) VALUES (0 , 'teste');
 
 -- inserindo salas de aula
 INSERT INTO tb_classroom (block, capacity, class_number, status, dates, schedules) VALUES ('A', 150, '100', 'Em manutencao', '2023-08-23', '2023-08-23 08:00:00');

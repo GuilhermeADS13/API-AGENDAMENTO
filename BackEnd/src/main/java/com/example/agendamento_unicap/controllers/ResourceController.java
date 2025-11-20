@@ -1,6 +1,7 @@
 package com.example.agendamento_unicap.controllers;
 
 import com.example.agendamento_unicap.dtos.ResourceDTO;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,13 +32,13 @@ public class ResourceController {
     }
 
     @PostMapping
-    public ResponseEntity<ResourceDTO> save(@RequestBody ResourceDTO resource) {
+    public ResponseEntity<ResourceDTO> save(@Valid @RequestBody ResourceDTO resource) {
         resource = resourceService.save(resource);
         return ResponseEntity.ok(resource);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<ResourceDTO> update(@PathVariable Integer id, @RequestBody ResourceDTO dto) {
+    public ResponseEntity<ResourceDTO> update(@PathVariable Integer id, @Valid @RequestBody ResourceDTO dto) {
         ResourceDTO updated = resourceService.update(id, dto);
         return ResponseEntity.ok(updated);
     }

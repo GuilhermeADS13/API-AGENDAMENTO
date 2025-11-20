@@ -5,6 +5,7 @@ import com.example.agendamento_unicap.dtos.ReservationDTO;
 import com.example.agendamento_unicap.entities.User;
 import com.example.agendamento_unicap.services.ClassroomService;
 import com.example.agendamento_unicap.services.ResourceService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -35,13 +36,13 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserDTO> save(@RequestBody UserDTO user) {
+    public ResponseEntity<UserDTO> save(@Valid @RequestBody UserDTO user) {
         user = userService.save(user);
         return ResponseEntity.ok(user);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UserDTO> update(@PathVariable Integer id, @RequestBody UserDTO dto) {
+    public ResponseEntity<UserDTO> update(@PathVariable Integer id, @Valid @RequestBody UserDTO dto) {
         UserDTO updated = userService.update(id, dto);
         return ResponseEntity.ok(updated);
     }
@@ -53,13 +54,13 @@ public class UserController {
     }
 
     @PostMapping("{userId}/classroom/{classroomId}")
-    public ResponseEntity<UserDTO> classroomReservation(@PathVariable Integer userId, @PathVariable Integer classroomId, @RequestBody ReservationDTO reservationDTO) {
+    public ResponseEntity<UserDTO> classroomReservation(@PathVariable Integer userId, @PathVariable Integer classroomId, @Valid @RequestBody ReservationDTO reservationDTO) {
         UserDTO dto = userService.classroomReservation(userId, classroomId, reservationDTO);
         return ResponseEntity.ok(dto);
     }
 
     @PostMapping("{userId}/resource/{resourceId}")
-    public ResponseEntity<UserDTO> resourceReservation(@PathVariable Integer userId, @PathVariable Integer resourceId, @RequestBody ReservationDTO reservationDTO) {
+    public ResponseEntity<UserDTO> resourceReservation(@PathVariable Integer userId, @PathVariable Integer resourceId, @Valid @RequestBody ReservationDTO reservationDTO) {
         UserDTO dto = userService.resourceReservation(userId, resourceId, reservationDTO);
         return ResponseEntity.ok(dto);
     }

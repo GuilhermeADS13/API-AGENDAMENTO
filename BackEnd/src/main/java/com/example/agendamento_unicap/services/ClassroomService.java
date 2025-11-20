@@ -2,6 +2,8 @@ package com.example.agendamento_unicap.services;
 
 import java.util.Optional;
 
+import com.example.agendamento_unicap.services.exceptions.DatabaseException;
+import com.example.agendamento_unicap.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -35,7 +37,7 @@ public class ClassroomService {
     @Transactional(readOnly = true)
     public ClassroomDTO findById(Integer id) {
         Optional<Classroom> obj = classroomRepository.findById(id);
-        Classroom entity = obj.orElseThrow();
+        Classroom entity = obj.orElseThrow(() -> new ResourceNotFoundException("Classe não encontrado"));
 
         return classroomMapper.mapToClassroomDTO(entity);
     }
@@ -50,7 +52,7 @@ public class ClassroomService {
     @Transactional
     public ClassroomDTO update(Integer id, ClassroomDTO dto) {
         Classroom entity = classroomRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Sala nao encontrada: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Sala nao encontrada: " + id));
 
         if (dto.getClassNumber() != null) {
             entity.setClassNumber(dto.getClassNumber());
@@ -79,14 +81,14 @@ public class ClassroomService {
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Integer id) {
         if (!classroomRepository.existsById(id)) {
-            throw new IllegalArgumentException("Id not found " + id);
+            throw new ResourceNotFoundException("Id not found " + id);
         }
 
         try {
             classroomRepository.deleteById(id);
 
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Integrity violation");
+            throw new DatabaseException("Integrity violation");
         }
     }
     

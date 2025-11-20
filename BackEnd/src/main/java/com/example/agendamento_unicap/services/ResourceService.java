@@ -4,6 +4,8 @@ import java.util.Optional;
 
 import com.example.agendamento_unicap.dtos.ResourceDTO;
 import com.example.agendamento_unicap.entities.Resource;
+import com.example.agendamento_unicap.services.exceptions.DatabaseException;
+import com.example.agendamento_unicap.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -37,7 +39,7 @@ public class ResourceService {
     @Transactional(readOnly = true)
     public ResourceDTO findById(int id) {
         Optional<Resource> obj = resourceRepository.findById(id);
-        Resource entity = obj.orElseThrow();
+        Resource entity = obj.orElseThrow(() -> new ResourceNotFoundException("Recurso não encontrado"));
 
         return resourceMapper.mapToResourceDTO(entity);
     }
@@ -52,16 +54,13 @@ public class ResourceService {
     @Transactional
     public ResourceDTO update(Integer id, ResourceDTO dto) {
         Resource entity = resourceRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Recurso nao encontrado: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Recurso nao encontrado: " + id));
 
         if (dto.getDescription() != null) {
             entity.setDescription(dto.getDescription());
         }
         if (dto.getQuantity() != 0) {
             entity.setQuantity(dto.getQuantity());
-        }
-        if (dto.getStatus() != null) {
-            entity.setStatus(dto.getStatus());
         }
 
         entity = resourceRepository.save(entity);
@@ -72,14 +71,14 @@ public class ResourceService {
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(int id) {
         if (!resourceRepository.existsById(id)) {
-            throw new IllegalArgumentException("Id not found " + id);
+            throw new ResourceNotFoundException("Id not found " + id);
         }
 
         try {
             resourceRepository.deleteById(id);
 
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Integrity violation");
+            throw new DatabaseException("Integrity violation");
         }
     }
     

@@ -2,12 +2,15 @@ package com.example.agendamento_unicap.services;
 
 import java.util.Optional;
 
-import com.example.agendamento_unicap.dtos.ClassroomDTO;
 import com.example.agendamento_unicap.dtos.ReservationDTO;
 import com.example.agendamento_unicap.entities.Classroom;
 import com.example.agendamento_unicap.entities.Resource;
+import com.example.agendamento_unicap.enums.StatusEnum;
 import com.example.agendamento_unicap.repositories.ClassroomRepository;
 import com.example.agendamento_unicap.repositories.ResourceRepository;
+import com.example.agendamento_unicap.services.exceptions.DatabaseException;
+import com.example.agendamento_unicap.services.exceptions.ReservationNotAvailableException;
+import com.example.agendamento_unicap.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -21,7 +24,6 @@ import com.example.agendamento_unicap.repositories.UserRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Service
@@ -48,7 +50,7 @@ public class UserService {
     @Transactional(readOnly = true)
     public UserDTO findById(Integer id) {
         Optional<User> obj = userRepository.findById(id);
-        User entity = obj.orElseThrow();
+        User entity = obj.orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado"));
 
         return userMapper.mapToUserDTO(entity);
     }
@@ -63,7 +65,7 @@ public class UserService {
     @Transactional
     public UserDTO update(Integer id, UserDTO dto) {
         User entity = userRepository.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Usuario nao encontrado: " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("Usuario nao encontrado: " + id));
 
         if (dto.getName() != null) {
             entity.setName(dto.getName());
@@ -83,34 +85,36 @@ public class UserService {
         return userMapper.mapToUserDTO(entity);
     }
 
-
-
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Integer id) {
         if (!userRepository.existsById(id)) {
-            throw new IllegalArgumentException("Ra nao encontrado:" + id);
+            throw new ResourceNotFoundException("Ra nao encontrado: " + id);
         }
 
         try {
             userRepository.deleteById(id);
 
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Violacao de integridade");
+            throw new DatabaseException("Violacao de integridade");
         }
     }
 
     @Transactional
     public UserDTO classroomReservation(Integer userId, Integer classroomId, ReservationDTO reservationDTO) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Usuário não encontrado"));
 
         Classroom classroom = classroomRepository.findById(classroomId)
-                .orElseThrow(() -> new RuntimeException("Classroom not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Sala de aula não encontrada"));
+
+        if (!classroom.getStatus().equals("Disponivel")) {
+            throw new ReservationNotAvailableException("Sala de aula indisponível");
+        }
 
         classroom.setReservationDate(reservationDTO.getReservationDate());
         classroom.setStartTime(reservationDTO.getStartTime());
         classroom.setEndTime(reservationDTO.getEndTime());
-        classroom.setStatus("Reservado");
+        classroom.setStatus("Ocupado");
 
         user.getClassrooms().add(classroom);
         userRepository.save(user);
@@ -121,19 +125,23 @@ public class UserService {
     @Transactional
     public UserDTO resourceReservation(Integer userId, Integer resourceId, ReservationDTO reservationDTO) {
         User user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException("User not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found"));
 
         Resource resource = resourceRepository.findById(resourceId)
-                .orElseThrow(() -> new RuntimeException("Classroom not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Classroom not found"));
+
+        if (resource.getQuantity() <= 0) {
+            throw new ReservationNotAvailableException("Quantidade insuficiente do recurso");
+        }
 
         resource.setReservationDate(reservationDTO.getReservationDate());
         resource.setStartTime(reservationDTO.getStartTime());
         resource.setEndTime(reservationDTO.getEndTime());
+        resource.setQuantity(resource.getQuantity() - 1);
 
         user.getResources().add(resource);
         userRepository.save(user);
 
         return userMapper.mapToUserDTO(user);
     }
-    
 }

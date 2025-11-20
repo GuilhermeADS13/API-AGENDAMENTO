@@ -3,6 +3,7 @@ package com.example.agendamento_unicap.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.agendamento_unicap.enums.StatusEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,4 +24,6 @@ public class Classroom extends Reservation{
     private Integer capacity;
     private List<LocalDateTime> schedules;
     private List<String> dates;
+    private String status;
+
 }
