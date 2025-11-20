@@ -9,5 +9,5 @@ import com.example.agendamento_unicap.entities.Classroom;
 @Mapper(componentModel = MappingConstants.ComponentModel.SPRING)
 public interface ClassroomMapper {
     Classroom mapToClassroom(ClassroomDTO classroomDTO);
-    ClassroomDTO mapToClassroomDTO(Classroom classrrom);
+    ClassroomDTO mapToClassroomDTO(Classroom classroom);
 }

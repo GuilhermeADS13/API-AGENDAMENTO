@@ -15,6 +15,7 @@ import com.example.agendamento_unicap.repositories.UserRepository;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 @Service
@@ -33,7 +34,7 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public UserDTO findById(Long RA) {
+    public UserDTO findById(Integer RA) {
         Optional<User> obj = userRepository.findById(RA);
         User entity = obj.orElseThrow();
 
@@ -47,17 +48,42 @@ public class UserService {
         return userMapper.mapToUserDTO(entity);
     }
 
+    @Transactional
+    public UserDTO update(Integer id, UserDTO dto) {
+        User entity = userRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Usuario nao encontrado: " + id));
+
+        if (dto.getName() != null) {
+            entity.setName(dto.getName());
+        }
+        if (dto.getEmail() != null) {
+            entity.setEmail(dto.getEmail());
+        }
+        if (dto.getClassrooms() != null) {
+            entity.setClassrooms(dto.getClassrooms());
+        }
+        if (dto.getResources() != null) {
+            entity.setResources(dto.getResources());
+        }
+
+        entity = userRepository.save(entity);
+
+        return userMapper.mapToUserDTO(entity);
+    }
+
+
+
     @Transactional(propagation = Propagation.SUPPORTS)
-    public void delete(Long RA) {
+    public void delete(Integer RA) {
         if (!userRepository.existsById(RA)) {
-            throw new IllegalArgumentException("Id not found " + RA);
+            throw new IllegalArgumentException("Ra nao encontrado:" + RA);
         }
 
         try {
             userRepository.deleteById(RA);
 
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Integrity violation");
+            throw new IllegalArgumentException("Violacao de integridade");
         }
     }
     

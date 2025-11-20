@@ -48,4 +48,4 @@ INSERT INTO tb_users_classrooms (classroom_id, user_id) VALUES (5, 10);
 
 INSERT INTO tb_users_resources (resource_id, user_id) VALUES (1, 1);
 
-
+INSERT INTO tb_reservation (user_id, reservation_type, classroom_id, resource_id, reservation_date, start_time, end_time, status) VALUES (1, 'RESOURCE', NULL, 1, '2006-05-23', '09:10:00', '11:00:00', 'Reservado');

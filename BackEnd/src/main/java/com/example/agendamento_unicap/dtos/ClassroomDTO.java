@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ClassroomDTO {
-    private int id;
+    private Integer id;
     private String classNumber;
-    private char block;
-    private int capacity;
-    private List<LocalDateTime> schedules; 
+    private Character block;
+    private Integer capacity;
+    private List<LocalDateTime> schedules;
     private List<String> dates;
     private String status;
 }

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResourceDTO {
-    private int id;
+    private Integer id;
     private int quantity;
     private String description;
     private String status;

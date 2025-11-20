@@ -19,15 +19,13 @@ import lombok.NoArgsConstructor;
 @Table(name = "tb_classroom")
 
 public class Classroom {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
+    private Integer id;
     private String classNumber;
     private char block;
-    private int capacity;
-    private List<LocalDateTime> schedules; 
+    private Integer capacity;
+    private List<LocalDateTime> schedules;
     private List<String> dates;
     private String status;
 }

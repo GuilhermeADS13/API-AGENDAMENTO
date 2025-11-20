@@ -33,7 +33,7 @@ public class ClassroomService {
     }
 
     @Transactional(readOnly = true)
-    public ClassroomDTO findById(int id) {
+    public ClassroomDTO findById(Integer id) {
         Optional<Classroom> obj = classroomRepository.findById(id);
         Classroom entity = obj.orElseThrow();
 
@@ -47,8 +47,37 @@ public class ClassroomService {
         return classroomMapper.mapToClassroomDTO(entity);
     }
 
+    @Transactional
+    public ClassroomDTO update(Integer id, ClassroomDTO dto) {
+        Classroom entity = classroomRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Sala nao encontrada: " + id));
+
+        if (dto.getClassNumber() != null) {
+            entity.setClassNumber(dto.getClassNumber());
+        }
+        if (dto.getBlock() != null) {
+            entity.setBlock(dto.getBlock());
+        }
+        if (dto.getCapacity() != null) {
+            entity.setCapacity(dto.getCapacity());
+        }
+        if (dto.getSchedules() != null) {
+            entity.setSchedules(dto.getSchedules());
+        }
+        if (dto.getDates() != null) {
+            entity.setDates(dto.getDates());
+        }
+        if (dto.getStatus() != null) {
+            entity.setStatus(dto.getStatus());
+        }
+
+        entity = classroomRepository.save(entity);
+
+        return classroomMapper.mapToClassroomDTO(entity);
+    }
+
     @Transactional(propagation = Propagation.SUPPORTS)
-    public void delete(int id) {
+    public void delete(Integer id) {
         if (!classroomRepository.existsById(id)) {
             throw new IllegalArgumentException("Id not found " + id);
         }
