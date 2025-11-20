@@ -23,5 +23,4 @@ public class Classroom extends Reservation{
     private Integer capacity;
     private List<LocalDateTime> schedules;
     private List<String> dates;
-    private String status;
 }

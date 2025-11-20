@@ -1,5 +1,10 @@
 package com.example.agendamento_unicap.controllers;
 
+import com.example.agendamento_unicap.dtos.ClassroomDTO;
+import com.example.agendamento_unicap.dtos.ReservationDTO;
+import com.example.agendamento_unicap.entities.User;
+import com.example.agendamento_unicap.services.ClassroomService;
+import com.example.agendamento_unicap.services.ResourceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -23,9 +28,9 @@ public class UserController {
         return ResponseEntity.ok(listUsers);
     }
 
-    @GetMapping("/{RA}")
-    public ResponseEntity<UserDTO> findById(@PathVariable Integer RA) {
-        UserDTO user = userService.findById(RA);
+    @GetMapping("/{id}")
+    public ResponseEntity<UserDTO> findById(@PathVariable Integer id) {
+        UserDTO user = userService.findById(id);
         return ResponseEntity.ok(user);
     }
 
@@ -41,9 +46,21 @@ public class UserController {
         return ResponseEntity.ok(updated);
     }
 
-    @DeleteMapping("/{RA}")
-    public ResponseEntity<Void> delete(@PathVariable Integer RA) {
-        userService.delete(RA);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Integer id) {
+        userService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @PostMapping("{userId}/classroom/{classroomId}")
+    public ResponseEntity<UserDTO> classroomReservation(@PathVariable Integer userId, @PathVariable Integer classroomId, @RequestBody ReservationDTO reservationDTO) {
+        UserDTO dto = userService.classroomReservation(userId, classroomId, reservationDTO);
+        return ResponseEntity.ok(dto);
+    }
+
+    @PostMapping("{userId}/resource/{resourceId}")
+    public ResponseEntity<UserDTO> resourceReservation(@PathVariable Integer userId, @PathVariable Integer resourceId, @RequestBody ReservationDTO reservationDTO) {
+        UserDTO dto = userService.resourceReservation(userId, resourceId, reservationDTO);
+        return ResponseEntity.ok(dto);
     }
 }

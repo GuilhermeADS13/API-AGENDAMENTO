@@ -11,7 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
-    private Integer RA;
+    private Integer id;
     private String name;
     private String email;
 

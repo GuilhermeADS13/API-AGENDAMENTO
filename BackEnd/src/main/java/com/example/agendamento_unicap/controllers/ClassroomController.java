@@ -18,9 +18,9 @@ public class ClassroomController {
 
     @GetMapping
     public ResponseEntity<Page<ClassroomDTO>> findAll(Pageable pageable) {
-        Page<ClassroomDTO> listclassrooms = classroomService.findAll(pageable);
+        Page<ClassroomDTO> listClassrooms = classroomService.findAll(pageable);
 
-        return ResponseEntity.ok(listclassrooms);
+        return ResponseEntity.ok(listClassrooms);
     }
 
     @GetMapping("/{id}")

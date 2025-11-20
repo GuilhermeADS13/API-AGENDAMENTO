@@ -16,7 +16,7 @@ public class User {
     @Id
     @EqualsAndHashCode.Include
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer RA;
+    private Integer id;
 
     @Column(nullable = false)
     private String name;
@@ -24,7 +24,7 @@ public class User {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "tb_users_classrooms",
             joinColumns = @JoinColumn(name = "user_id"),
@@ -32,7 +32,7 @@ public class User {
     )
     private List<Classroom> classrooms;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
             name = "tb_users_resources",
             joinColumns = @JoinColumn(name = "user_id"),

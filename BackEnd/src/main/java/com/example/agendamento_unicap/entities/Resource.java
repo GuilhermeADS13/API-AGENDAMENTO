@@ -1,10 +1,6 @@
 package com.example.agendamento_unicap.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -16,8 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "tb_resource")
 public class Resource extends Reservation{
-    
+
+    @Column(nullable = false)
     private int quantity;
+    @Column(columnDefinition = "TEXT")
     private String description;
-    private String status;
 }
