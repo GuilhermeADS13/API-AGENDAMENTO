@@ -1,14 +1,9 @@
 package com.example.agendamento_unicap.controllers;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.example.agendamento_unicap.dtos.ClassroomDTO;
 import com.example.agendamento_unicap.services.ClassroomService;
@@ -24,9 +19,9 @@ public class ClassroomController {
 
     @GetMapping
     public ResponseEntity<Page<ClassroomDTO>> findAll(Pageable pageable) {
-        Page<ClassroomDTO> listclassrooms = classroomService.findAll(pageable);
+        Page<ClassroomDTO> listClassrooms = classroomService.findAll(pageable);
 
-        return ResponseEntity.ok(listclassrooms);
+        return ResponseEntity.ok(listClassrooms);
     }
 
     @GetMapping("/{id}")
@@ -36,10 +31,17 @@ public class ClassroomController {
     }
 
     @PostMapping
-    public ResponseEntity<ClassroomDTO> save(@RequestBody ClassroomDTO classroom) {
+    public ResponseEntity<ClassroomDTO> save(@Valid @RequestBody ClassroomDTO classroom) {
         classroom = classroomService.save(classroom);
         return ResponseEntity.ok(classroom);
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ClassroomDTO> update(@PathVariable Integer id, @Valid @RequestBody ClassroomDTO dto) {
+        ClassroomDTO updated = classroomService.update(id, dto);
+        return ResponseEntity.ok(updated);
+    }
+
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {

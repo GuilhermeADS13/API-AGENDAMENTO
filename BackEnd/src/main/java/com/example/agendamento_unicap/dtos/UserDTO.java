@@ -5,17 +5,23 @@ import java.util.List;
 import com.example.agendamento_unicap.entities.Classroom;
 import com.example.agendamento_unicap.entities.Resource;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserDTO {
+    private Integer id;
+
+    @NotBlank(message = "Campo obrigatório")
     private String name;
+
+    @Email(message = "Favor entrar um email válido")
     private String email;
-    private Long RA;
+    private String password;
+
     private List<Classroom> classrooms;
     private List<Resource> resources;
 }

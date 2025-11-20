@@ -3,6 +3,7 @@ package com.example.agendamento_unicap.entities;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.example.agendamento_unicap.enums.StatusEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,22 +13,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @NoArgsConstructor
 @Table(name = "tb_classroom")
-
-public class Classroom {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    
+public class Classroom extends Reservation{
     private String classNumber;
     private char block;
-    private int capacity;
-    private List<LocalDateTime> schedules; 
+    private Integer capacity;
+    private List<LocalDateTime> schedules;
     private List<String> dates;
     private String status;
+
 }

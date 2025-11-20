@@ -2,6 +2,8 @@ package com.example.agendamento_unicap.services;
 
 import java.util.Optional;
 
+import com.example.agendamento_unicap.services.exceptions.DatabaseException;
+import com.example.agendamento_unicap.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
@@ -33,9 +35,9 @@ public class ClassroomService {
     }
 
     @Transactional(readOnly = true)
-    public ClassroomDTO findById(int id) {
+    public ClassroomDTO findById(Integer id) {
         Optional<Classroom> obj = classroomRepository.findById(id);
-        Classroom entity = obj.orElseThrow();
+        Classroom entity = obj.orElseThrow(() -> new ResourceNotFoundException("Classe não encontrado"));
 
         return classroomMapper.mapToClassroomDTO(entity);
     }
@@ -47,17 +49,46 @@ public class ClassroomService {
         return classroomMapper.mapToClassroomDTO(entity);
     }
 
+    @Transactional
+    public ClassroomDTO update(Integer id, ClassroomDTO dto) {
+        Classroom entity = classroomRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Sala nao encontrada: " + id));
+
+        if (dto.getClassNumber() != null) {
+            entity.setClassNumber(dto.getClassNumber());
+        }
+        if (dto.getBlock() != null) {
+            entity.setBlock(dto.getBlock());
+        }
+        if (dto.getCapacity() != null) {
+            entity.setCapacity(dto.getCapacity());
+        }
+        if (dto.getSchedules() != null) {
+            entity.setSchedules(dto.getSchedules());
+        }
+        if (dto.getDates() != null) {
+            entity.setDates(dto.getDates());
+        }
+        if (dto.getStatus() != null) {
+            entity.setStatus(dto.getStatus());
+        }
+
+        entity = classroomRepository.save(entity);
+
+        return classroomMapper.mapToClassroomDTO(entity);
+    }
+
     @Transactional(propagation = Propagation.SUPPORTS)
-    public void delete(int id) {
+    public void delete(Integer id) {
         if (!classroomRepository.existsById(id)) {
-            throw new IllegalArgumentException("Id not found " + id);
+            throw new ResourceNotFoundException("Id not found " + id);
         }
 
         try {
             classroomRepository.deleteById(id);
 
         } catch (DataIntegrityViolationException e) {
-            throw new IllegalArgumentException("Integrity violation");
+            throw new DatabaseException("Integrity violation");
         }
     }
     
