@@ -20,6 +20,7 @@ public class UserDTO {
 
     @Email(message = "Favor entrar um email válido")
     private String email;
+    private String password;
 
     private List<Classroom> classrooms;
     private List<Resource> resources;

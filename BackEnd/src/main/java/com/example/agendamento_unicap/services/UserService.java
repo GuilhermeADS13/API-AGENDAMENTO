@@ -5,7 +5,6 @@ import java.util.Optional;
 import com.example.agendamento_unicap.dtos.ReservationDTO;
 import com.example.agendamento_unicap.entities.Classroom;
 import com.example.agendamento_unicap.entities.Resource;
-import com.example.agendamento_unicap.enums.StatusEnum;
 import com.example.agendamento_unicap.repositories.ClassroomRepository;
 import com.example.agendamento_unicap.repositories.ResourceRepository;
 import com.example.agendamento_unicap.services.exceptions.DatabaseException;
@@ -72,6 +71,9 @@ public class UserService {
         }
         if (dto.getEmail() != null) {
             entity.setEmail(dto.getEmail());
+        }
+        if (dto.getPassword() != null) {
+            entity.setPassword(dto.getPassword());
         }
         if (dto.getClassrooms() != null) {
             entity.setClassrooms(dto.getClassrooms());

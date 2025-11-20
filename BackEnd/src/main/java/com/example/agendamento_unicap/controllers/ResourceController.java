@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.example.agendamento_unicap.dtos.ResourceDTO;
 import com.example.agendamento_unicap.services.ResourceService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
