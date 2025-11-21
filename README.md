@@ -40,6 +40,8 @@ Ela permite:
   Sprint 2
   <img width="1074" height="566" alt="image" src="https://github.com/user-attachments/assets/48e87ecc-7698-47a6-b6fe-36ec79630b6c" />
   Sprint 3
+   <img <img width="1311" height="562" alt="image" src="https://github.com/user-attachments/assets/05522527-ae2f-4054-aa39-0cf43fb3ad65" />
+
 
 </p>
 
