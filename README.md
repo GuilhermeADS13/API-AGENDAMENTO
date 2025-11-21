@@ -35,7 +35,12 @@ Ela permite:
 
 # 🔹Quadro de Entregas
 <p align="center">
-<img width="1918" height="808" alt="image" src="https://github.com/user-attachments/assets/66c00dc0-4cb3-4c95-9a30-4de2cfc23165" />
+  Sprint 1
+  <img width="1320" height="559" alt="image" src="https://github.com/user-attachments/assets/d8d43c38-092b-431f-857f-397a5fc91a16" />
+  Sprint 2
+  <img width="1074" height="566" alt="image" src="https://github.com/user-attachments/assets/48e87ecc-7698-47a6-b6fe-36ec79630b6c" />
+  Sprint 3
+
 </p>
 
 # 🔹Screencast do projeto
