@@ -46,7 +46,7 @@ Ela permite:
 </p>
 
 # 🔹Screencast do projeto
-https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c
+[https://github.com/user-attachments/assets/29e53580-48c1-4e27-8d8a-7c169bd7366c](https://github.com/GuilhermeADS13/API-AGENDAMENTO/blob/6d2beb1ed56f135415554b83a083ee82737ad742/WhatsApp%20Video%202025-11-21%20at%2022.51.05%20(1).mp4)
 
 # 🔹Diagramas
 **Usuário (Aluno/Professor)**
