@@ -85,3 +85,10 @@ O uso do Discord mostrou-se eficiente para o trabalho em dupla, contribuindo par
 
 # 🔹Teste de Inserção
 https://github.com/user-attachments/assets/247e7054-cf1b-441b-8204-ae96964aa52b
+
+# 🔹Screencast do Projeto
+
+
+https://github.com/user-attachments/assets/84fb5af5-97b8-46ab-bf1f-5f0bc693b66d
+
+
