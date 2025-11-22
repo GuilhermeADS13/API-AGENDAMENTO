@@ -81,6 +81,8 @@ O uso do Discord mostrou-se eficiente para o trabalho em dupla, contribuindo par
        alt="image" 
        width="49%" 
        style="display:inline-block;" />
+  Ligação utilizada para upload da Screencast final do Projeto e atualizar o andamento do trello. Além de discutirmos quais os proximos passos e alterações a serem realizadas.
+  ithub.com/GuilhermeADS13/API-AGENDAMENTO/blob/main/README.md
 </div>
 
 # 🔹Teste de Inserção
