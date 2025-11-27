@@ -50,6 +50,43 @@ Ela permite:
 **Funcionário**
 ![Diagrama Funcionário](https://github.com/user-attachments/assets/633a1dc2-fa0b-42bf-a240-63aaf6100aa7)
 
+**Cadastrar recurso**
+
+<img width="6408" height="7630" alt="cadastrar recurso" src="https://github.com/user-attachments/assets/6d5396e6-22f7-4276-bfa5-0cf61a5839f2" />
+
+**Login do usuario**
+<img width="1024" height="768" alt="Login Usuario" src="https://github.com/user-attachments/assets/26006c2f-71ec-4be5-ada7-5f7ab503f093" />
+**Cadastrar usuario**
+
+<img width="1024" height="768" alt="Cadastro usuario" src="https://github.com/user-attachments/assets/6340655f-b574-4c79-916a-fac7a35f1640" />
+
+**"Historico de reserva"**
+<img width="2219" height="5227" alt="historico de reservas" src="https://github.com/user-attachments/assets/a82c69a7-f1de-41b4-8259-63cd67afc6f3" />
+
+**Editar recurso*"
+
+
+<img width="380" height="281" alt="Editar recurso" src="https://github.com/user-attachments/assets/7749fcf4-6ab2-4ec3-9460-1a76769e57b3" />
+
+"*Visualizar resevas*"
+<img width="910" height="2798" alt="Visualizar reservas" src="https://github.com/user-attachments/assets/63a9a43d-95d4-4971-a2e1-25e5c6a5c6b3" />
+
+"*Buscar Recurso*"
+<img width="1024" height="768" alt="Buscar Recurso" src="https://github.com/user-attachments/assets/d3ed3271-5c36-4249-85f0-156316783633" />
+
+"*Visualizar Resevas futuras*"
+<img width="910" height="2620" alt="RESERVA futuras" src="https://github.com/user-attachments/assets/dcd3d6d5-fb8a-45f6-8a26-9c2643446b45" />
+
+""Reserva Recorrentes""
+<img width="3825" height="10111" alt="Reserva Recorrentes" src="https://github.com/user-attachments/assets/210a48de-be2e-4898-bf87-cb53a6126c80" />
+
+""Visualizar Recursos"" 
+<img width="3790" height="12389" alt="Visualizar Recursos" src="https://github.com/user-attachments/assets/1650261f-868e-421f-b9f9-303b6e91ae78" />
+
+**Gerar Relatorio""
+<img width="4838" height="13859" alt="Gerar relatorio" src="https://github.com/user-attachments/assets/55e3ac25-e0d6-4b32-8af1-23481c4c1e12" />
+
+
 # 🔹Programação em Par
 <details>
   <summary>Relatório</summary>
