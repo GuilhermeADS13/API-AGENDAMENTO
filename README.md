@@ -126,3 +126,21 @@ https://github.com/user-attachments/assets/247e7054-cf1b-441b-8204-ae96964aa52b
 https://github.com/user-attachments/assets/84fb5af5-97b8-46ab-bf1f-5f0bc693b66d
 
 
+
+## 🧾 Módulo FastAPI para processamento de PDF/DOCX
+Foi adicionado um módulo web em Python com interface inspirada no iLovePDF.
+
+### Arquivos principais
+- `main.py`: servidor FastAPI com página inicial e endpoint `/upload`.
+- `templates/index.html` e `static/style.css`: interface para envio de arquivos.
+- `requirements.txt`: dependências do módulo Python.
+
+### Executar
+```bash
+python -m venv .venv
+source .venv/bin/activate  # Linux/Mac
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+```
+
+Acesse `http://localhost:8000` para enviar arquivos PDF ou DOCX.
