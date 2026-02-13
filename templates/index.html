@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocFlow | Processador de Arquivos</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <h1>Transforme seus documentos</h1>
+        <p>
+          Envie um PDF ou DOCX para receber uma versão processada. A lógica de IA
+          pode ser integrada no back-end da aplicação.
+        </p>
+
+        <form action="/upload" method="post" enctype="multipart/form-data">
+          <label for="file" class="file-label">Selecionar arquivo</label>
+          <input id="file" type="file" name="file" accept=".pdf,.docx" required />
+          <button type="submit">Processar arquivo</button>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

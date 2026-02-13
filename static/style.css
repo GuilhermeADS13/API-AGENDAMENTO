@@ -1,0 +1,77 @@
+:root {
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2a44;
+  --subtext: #55637a;
+  --accent: #ff4d4d;
+  --accent-hover: #e43838;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #f5f7fb 0%, #eef2f8 100%);
+  color: var(--text);
+}
+
+.container {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: min(520px, 100%);
+  background: var(--card);
+  border-radius: 16px;
+  padding: 36px;
+  box-shadow: 0 10px 30px rgba(31, 42, 68, 0.1);
+}
+
+h1 {
+  margin: 0 0 12px;
+  font-size: 1.9rem;
+}
+
+p {
+  margin: 0 0 24px;
+  color: var(--subtext);
+  line-height: 1.5;
+}
+
+form {
+  display: grid;
+  gap: 12px;
+}
+
+.file-label {
+  font-weight: 600;
+}
+
+input[type="file"] {
+  border: 1px solid #d6deea;
+  border-radius: 10px;
+  padding: 10px;
+  background: #fbfcff;
+}
+
+button {
+  border: 0;
+  border-radius: 12px;
+  padding: 12px 18px;
+  background: var(--accent);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: var(--accent-hover);
+}
